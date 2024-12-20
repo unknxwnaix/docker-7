@@ -3,10 +3,10 @@ name: Check Style Code
 on:
   push:
     branches:
-      - new_branch2
+      - new_branch4
   pull_request:
     branches:
-      - new_branch2
+      - new_branch4
 
 jobs:
   checkstyle:

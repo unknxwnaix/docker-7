@@ -4,7 +4,14 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework import viewsets
 
-from .serializers import *
+from .models import (
+    User, Currency, GoalType, Goal,
+    TransactionCategory, OperationType, PayingMethod, Transaction
+)
+from .serializers import (
+    UserSerializer, CurrencySerializer, GoalTypeSerializer, GoalSerializer,
+    TransactionCategorySerializer, OperationTypeSerializer, PayingMethodSerializer, TransactionSerializer
+)
 
 import csv
 import os
