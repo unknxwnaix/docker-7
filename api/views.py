@@ -1,23 +1,14 @@
+from django.conf import settings
+from django.db import connection
+from django.http import HttpResponse
 from django.shortcuts import render
-
-# Create your views here.
 from rest_framework import viewsets
-from .models import User, Currency, GoalType, Goal, TransactionCategory, OperationType, PayingMethod, Transaction
-from .serializers import (
-    UserSerializer, CurrencySerializer, GoalTypeSerializer, GoalSerializer,
-    TransactionCategorySerializer, OperationTypeSerializer, PayingMethodSerializer, TransactionSerializer
-)
+
+from .serializers import *
 
 import csv
-import subprocess
-from django.http import HttpResponse
-from django.conf import settings
 import os
-
-from django.http import HttpResponse
-from django.shortcuts import render
-from django.db import connection
-from .models import User, Goal, Currency  # Импортируйте ваши модели
+import subprocess
 
 
 # Экспорт данных в CSV
@@ -26,9 +17,8 @@ def export_csv(request):
     response['Content-Disposition'] = 'attachment; filename="database_export.csv"'
 
     writer = csv.writer(response)
-
-    # Пример экспорта данных из таблицы User
     writer.writerow(['ID', 'Login', 'Full Name', 'Email'])
+
     for user in User.objects.all():
         writer.writerow([user.id, user.login, user.full_name, user.email])
 
@@ -37,10 +27,7 @@ def export_csv(request):
 
 # Экспорт базы данных в SQL
 def export_sql(request):
-    # Путь к файлу дампа
     file_path = os.path.join(settings.BASE_DIR, 'database_dump.sql')
-
-    # Команда для экспорта базы данных через pg_dump
     command = [
         'pg_dump',
         '--dbname=postgresql://{USER}:{PASSWORD}@{HOST}:{PORT}/{NAME}'.format(
@@ -50,23 +37,19 @@ def export_sql(request):
             PORT=settings.DATABASES['default']['PORT'],
             NAME=settings.DATABASES['default']['NAME']
         ),
-        '-f', file_path  # Указываем, куда сохранить дамп
+        '-f', file_path
     ]
 
-    # Выполняем команду pg_dump
     try:
-        subprocess.run(command, check=True)  # Запускаем pg_dump
+        subprocess.run(command, check=True)
     except subprocess.CalledProcessError as e:
         return HttpResponse(f"Ошибка при экспорте базы данных: {e}", status=500)
 
-    # Читаем содержимое дампа и отправляем клиенту
     with open(file_path, 'r') as dump_file:
         response = HttpResponse(dump_file.read(), content_type='application/sql')
         response['Content-Disposition'] = 'attachment; filename=database_dump.sql'
 
-    # Удаляем временный файл
     os.remove(file_path)
-
     return response
 
 
@@ -77,10 +60,9 @@ def import_csv(request):
         if not csv_file.name.endswith('.csv'):
             return HttpResponse("Файл должен быть в формате CSV")
 
-        # Чтение CSV-файла
         data = csv_file.read().decode('utf-8').splitlines()
         reader = csv.reader(data)
-        next(reader)  # Пропустить заголовок
+        next(reader)
 
         for row in reader:
             User.objects.create(
@@ -109,6 +91,7 @@ def import_sql(request):
         return HttpResponse("SQL успешно импортирован!")
 
     return render(request, 'import_sql.html')
+
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
