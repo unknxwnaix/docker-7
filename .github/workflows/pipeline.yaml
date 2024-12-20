@@ -3,10 +3,10 @@ name: Check Style Code
 on:
   push:
     branches:
-      - new_branch
+      - new_branch1
   pull_request:
     branches:
-      - new_branch
+      - new_branch1
 
 jobs:
   checkstyle:
@@ -18,7 +18,7 @@ jobs:
       - name: Set version python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9.6'
+          python-version: '3.12'
 
       - name: Install dependencies
         run: |
@@ -26,4 +26,4 @@ jobs:
 
       - name: Run linter
         run: |
-          flake8 .  # В данном случае, если flake8 настроен через .flake8 или setup.cfg, он будет работать корректно
+          flake8 .

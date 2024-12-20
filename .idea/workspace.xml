@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5eb6bb3-a75d-4e5a-a9c2-1243399443cb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pipeline.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/reach.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/reach.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/signal.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/signal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependensies" beforeDir="false" afterPath="$PROJECT_DIR$/dependensies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reach/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/reach/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reach/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/reach/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/runserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/import_sql.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/import_sql.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +62,13 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "new__branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -149,7 +144,7 @@
       <workItem from="1734429277538" duration="691000" />
       <workItem from="1734583899355" duration="6686000" />
       <workItem from="1734622568163" duration="5083000" />
-      <workItem from="1734686879509" duration="8209000" />
+      <workItem from="1734686879509" duration="9458000" />
     </task>
     <servers />
   </component>
