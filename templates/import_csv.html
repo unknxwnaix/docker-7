@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Импорт CSV</title>
+</head>
+<body>
+    <h1>Импорт CSV</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".csv">
+        <button type="submit">Загрузить</button>
+    </form>
+</body>
+</html>
