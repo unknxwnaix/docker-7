@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Импорт SQL</title>
 </head>
 <body>
-$END$
+    <h1>Импорт SQL</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept=".sql">
+        <button type="submit">Загрузить</button>
+    </form>
 </body>
 </html>

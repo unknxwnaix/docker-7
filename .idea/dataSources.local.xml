@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-241.18034.82">
+    <data-source name="reach@localhost" uuid="d444d63f-f260-440a-b371-fa1c83393768">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>aix</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

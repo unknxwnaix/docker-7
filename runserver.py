@@ -12,7 +12,7 @@ def get_local_ip():
         return local_ip
     except Exception as e:
         print(f"Ошибка определения локального IP: {e}")
-        return "127.0.0.1"  # Использовать localhost в случае ошибки
+        return "127.0.0.1"
 
 
 if __name__ == "__main__":

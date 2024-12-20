@@ -1,0 +1,29 @@
+name: Check Style Code
+
+on:
+  push:
+    branches:
+      - new_branch
+  pull_request:
+    branches:
+      - new_branch
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download code
+        uses: actions/checkout@v2
+
+      - name: Set version python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9.6'
+
+      - name: Install dependencies
+        run: |
+          pip install flake8
+
+      - name: Run linter
+        run: |
+          flake8 .  # В данном случае, если flake8 настроен через .flake8 или setup.cfg, он будет работать корректно
